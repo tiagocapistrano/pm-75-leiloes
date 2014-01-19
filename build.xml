@@ -85,7 +85,7 @@
 			</jacoco:report>
 		</target>
 	
-	<property name="apache.tomcat7" value="apache-tomcat-7.0.42"/>
+	<property name="apache.tomcat7" value="apache-tomcat-7.0.50"/>
 	
 	<target name="gera-war" depends="executar-os-testes">
 		<war destfile="${apache.tomcat7}/webapps/pm-75-leiloes.war">
@@ -97,7 +97,7 @@
 	<target name="prepara-servidor-tomcat-7">
 		<delete dir="${apache.tomcat7}"/>
 		<delete dir="${apache.tomcat7}.zip"/>
-		<get dest="." src="http://ftp.unicamp.br/pub/apache/tomcat/tomcat-7/v7.0.50/bin/apache-tomcat-7.0.50.zip"/>
+		<get dest="." src="http://ftp.unicamp.br/pub/apache/tomcat/tomcat-7/v7.0.50/bin/${apache.tomcat7}.zip"/>
 		<unzip dest="." src="${apache.tomcat7}.zip"/>
 		<delete dir="${apache.tomcat7}/conf/server.xml"/>
 		<copy file="server.xml" todir="${apache.tomcat7}/conf/"/>
